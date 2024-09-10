@@ -153,7 +153,7 @@
                             
                             
                         </div>
-                    </div>
+                     </div>
                         
 
                         {{-- <form action="{{ url('customers/all-customers') }}" method="post" enctype="multipart/form-data">
@@ -166,16 +166,16 @@
 
                         
                         <table class="table table-bordered table-striped">
-                            <thead>
+                            <thead style="background-color: #7A7A7A; color:white">
                                 <tr>
-                                    <th style="text-align: center;">Customer ID</th>
-                                    <th style="text-align: center;">Name (Organization)</th>
-                                    <th style="text-align: center;">Type</th>
-                                    <th style="text-align: center;">Account ID</th>
-                                    <th style="text-align: center;">Account Name </th>
-                                    <th style="text-align: center;">Status</th>
-                                    <th style="text-align: center;">Tarrif</th>
-                                    <th style="text-align: center;">Agent</th>
+                                    <th style="text-align: center; vertical-align: middle;">Customer ID</th>
+                                    <th style="text-align: center; vertical-align: middle;">Name (Organization)</th>
+                                    <th style="text-align: center; vertical-align: middle;">Type</th>
+                                    <th style="text-align: center; vertical-align: middle;">Account ID</th>
+                                    <th style="text-align: center; vertical-align: middle;">Account Name </th>
+                                    <th style="text-align: center; vertical-align: middle;">Status</th>
+                                    <th style="text-align: center; vertical-align: middle;">Tarrif</th>
+                                    <th style="text-align: center; vertical-align: middle;">Agent</th>
                                 </tr>
                             </thead>
 
