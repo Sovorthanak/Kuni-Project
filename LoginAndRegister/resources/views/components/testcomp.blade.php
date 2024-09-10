@@ -44,13 +44,13 @@
                     </div>
 
                     <div class="top-links-menu">
-                        <a href="" class="{{ Request::segment(1) == 'report' ? 'a-active' : '' }}">
+                        <a href="/reports/acc-report" class="{{ Request::segment(1) == 'reports' ? 'a-active' : '' }}">
                             Report
                         </a>
                         <ul class="dropdown">
                             <div class="dd_items">
                               <li><a href="/reports/acc-report">Account Report</a></li>
-                              <li><a>Account Status History</a></li>
+                              <li><a href="/reports/acc-status-his">Account Status History</a></li>
                               <li><a>Account Summary Report</a></li>
                               <li><a>Account Recievable Aging Report</a></li>
                               <li><a>Change Plan History</a></li>
