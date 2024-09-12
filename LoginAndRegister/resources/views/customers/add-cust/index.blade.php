@@ -1,4 +1,4 @@
-<x-testcomp>
+    <x-testcomp>
     <div class="container">
         <span class="add-cust">
             <div class="row">
@@ -8,20 +8,20 @@
                             <h4>Sign Up New Customer</h4>
                         </div>
                         <div class="card-body">
-                            <form action="/administration/users" method="post">
+                            <form action="/administration/users" method="post" id="add-cust-form">
                                 @csrf
                                 <div class="input">
                                 <div class="mb-3">
                                     <label for="">Customer's Name <span>*</span></label>
-                                    <input type="text" name="name" class="form-control" />
-                                    @error('name')
+                                    <input type="text" name="customer-name" class="form-control" />
+                                    @error('customer-name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Identity</label>
-                                    <input type="text" name="identity" class="form-control" />
-                                    @error('email')
+                                    <input type="text" name="identity" class="form-control" placeholder="Government Issued Identification"/>
+                                    @error('identity')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -29,17 +29,17 @@
                                     <label for="">Customer Type <span>*</span></label>
                                     <select name="customer-type" id="customer-type" class="form-control">
                                         <option value="">Select Customer Type</option> <!-- Placeholder option -->
-                                        <option value="regular">Firm</option>
-                                        <option value="vip">Individual</option>
+                                        <option value="firm">Firm</option>
+                                        <option value="individual">Individual</option>
                                     </select>                                    
-                                    @error('password')
+                                    @error('customer-type')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Organization</label>
-                                    <input type="text" name="customer-type" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="organization" class="form-control" />
+                                    @error('organization')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -682,35 +682,35 @@
                                         <option value="Water & Sewage - Water Tanks & Reservoirs">Water &amp; Sewage - Water Tanks &amp; Reservoirs</option>
                                         <option value="Water & Sewage - Water Treatment">Water &amp; Sewage - Water Treatment</option>
                                     </select>
-                                    @error('password')
+                                    @error('industry-type')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Address Line 1 <span>*</span></label>
-                                    <input type="text" name="address-line-1" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="address-line-1" class="form-control" placeholder="House Number, Road Name"/>
+                                    @error('address-line-1')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Address Line 2</label>
-                                    <input type="text" name="address-line-2" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="address-line-2" class="form-control" placeholder="Block Numer or Area Name"/>
+                                    @error('address-line-2')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Address Line 3</label>
-                                    <input type="text" name="address-line-3" class="form-control"/>
-                                    @error('password')
+                                    <input type="text" name="address-line-3" class="form-control" placeholder="District Name"/>
+                                    @error('address-line-3')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Postal Code</label>
                                     <input type="text" name="postal-code" class="form-control"/>
-                                    @error('password')
+                                    @error('postal-code')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -957,147 +957,188 @@
                                         <option value="YE">[YE] Yemen</option>
                                         <option value="ZM">[ZM] Zambia</option>
                                         <option value="ZW">[ZW] Zimbabwe</option>
-                                    </select>                                    @error('password')
+                                    </select>                                    
+                                    @error('city')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Province/State</label>
                                     <input type="text" name="province" class="form-control" />
-                                    @error('password')
+                                    @error('province')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Country <span>*</span></label>
                                     <input type="text" name="country" class="form-control" />
-                                    @error('password')
+                                    @error('country')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Phone Number <span>*</span></label>
-                                    <input type="text" name="phone-number" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="phone-number" class="form-control" placeholder="Format: (+123) 123 123 123, 456 456 456 #1234"/>
+                                    @error('phone-number')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Fax Number</label>
-                                    <input type="text" name="fax-number" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="fax-number" class="form-control" placeholder="Format: (+123) 123 123 123, 456 456 456"/>
+                                    @error('fax-number')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">E-Mail Address <span>*</span></label>
-                                    <input type="text" name="email" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="customer-email" id="customer-email" class="form-control" placeholder="Format: user1@domain.com"/>
+                                    @error('customer-email')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Agent <span>*</span></label>
-                                    <input type="text" name="agent" class="form-control" />
-                                    @error('password')
+                                    <select name="agent" id="agent" class="form-control">
+                                        <option value="">Select Agent Type</option> <!-- Placeholder option -->
+                                        <option value="regular">Firm</option>
+                                        <option value="vip">Individual</option>
+                                    </select>                                    
+                                    @error('agent')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Currency <span>*</span></label>
-                                    <input type="text" name="currency" class="form-control" />
-                                    @error('password')
+                                    <select name="currency" id="currency" class="form-control">
+                                        <option value="">Select Currency Type</option> <!-- Placeholder option -->
+                                        <option value="KHR">[KHR] Khmer Riel</option>
+                                        <option value="USD" selected>[USD] U.S Dollar</option>
+                                    </select>                                    
+                                    @error('currency')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Customer Profile <span>*</span></label>
-                                    <input type="text" name="customer-pf" class="form-control" />
-                                    @error('password')
+                                    <select name="customer-profile" id="customer-profile" class="form-control">
+                                        <option value="">Select Customer Profile Type</option> <!-- Placeholder option -->
+                                        <option value="Firm Customers">Firm Customers</option>
+                                        <option value="Firm Customers - 12 Days Advance Bill Run">Firm Customers - 12 Days Advance Bill Run</option>
+                                        <option value="Individual Customers">Individual Customers</option>
+                                    </select>                                    
+                                    @error('customer-profile')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Invoice Template <span>*</span></label>
-                                    <input type="text" name="invoice-template" class="form-control" />
-                                    @error('password')
+                                    <select name="invoice-template" id="invoice-template" class="form-control">
+                                        <option value="">Select Invoice Template</option> <!-- Placeholder option -->
+                                        <option value="Fast One Invoice (Firm with SA)">Fast One Invoice (Firm with SA)</option>
+                                        <option value="Fast One Invoice (Firm)">Fast One Invoice (Firm)</option>
+                                        <option value="Fast One Invoice (Individual)">Fast One Invoice (Individual)</option>
+                                    </select>                                    
+                                    @error('invoice-template')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Payment Tamplate <span>*</span></label>
-                                    <input type="text" name="postal-code" class="form-control" />
-                                    @error('password')
+                                    <select name="payment-template" id="payment-template" class="form-control">
+                                        <option value="Default">Default</option>
+                                        <option value="FAST ONE Payment (Firm)">FAST ONE Payment (Firm)</option>
+                                        <option value="FAST ONE Payment (Individual)">FAST ONE Payment (Individual)</option>
+                                    </select>                                      
+                                    @error('payment-template')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. Customer Name</label>
-                                    <input type="text" name="alt-customer-name" class="form-control" />
-                                    @error('password')
+                                    <input type="text" id="alt-customer-name" name="alt-customer-name" class="form-control" placeholder="[Customer Name] in local language"/>
+                                    @error('alt-customer-name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Tax ID Number</label>
-                                    <input type="text" name="tax-id-number" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="tax-id-number" class="form-control" id="tax-id-number"/>
+                                    @error('tax-id-number')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. Organization</label>
-                                    <input type="text" name="alt-organization" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="alt-organization" class="form-control" placeholder="[Organization] in local language"/>
+                                    @error('alt-organization')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. Address Line 1</label>
-                                    <input type="text" name="alt-address-line-1" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="alt-address-line-1" class="form-control" placeholder="[House Numer, Road Name] in local language"/>
+                                    @error('alt-address-line-1')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. Address Line 2</label>
-                                    <input type="text" name="alt-address-line-2" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="alt-address-line-2" class="form-control" placeholder="[Block Number or Area Name] in local language"/>
+                                    @error('alt-address-line-2')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. Address Line 3</label>
-                                    <input type="text" name="alt-address-line-3" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="alt-address-line-3" class="form-control" placeholder="[District Name in local language]"/>
+                                    @error('alt-address-line-3')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. City</label>
-                                    <input type="text" name="alt-city" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="alt-city" class="form-control" placeholder="[City] in local language"/>
+                                    @error('alt-city')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Alt. Province/State</label>
-                                    <input type="text" name="alt-province" class="form-control" />
-                                    @error('password')
+                                    <input type="text" name="alt-province" class="form-control" placeholder="[Province] in local language"/>
+                                    @error('alt-province')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Accept SMS? <span>*</span></label>
-                                    <input type="text" name="accept-sms" class="form-control" />
-                                    @error('password')
+                                    <span class="yes-no-option">
+                                        <span>
+                                            <input type="radio" name="accept-sms" value="yes">
+                                            Yes
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="accept-sms" value="no" checked>
+                                            No
+                                        </span>
+                                    </span>                                 
+                                    @error('accept-sms')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Accept E-Mail? <span>*</span></label>
-                                    <input type="text" name="accept-email" class="form-control" />
-                                    @error('password')
+                                    <span class="yes-no-option">
+                                        <span>
+                                            <input type="radio" name="accept-email" value="yes" checked>
+                                            Yes
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="accept-email" value="no">
+                                            No
+                                        </span>
+                                    </span>                                 
+                                    @error('accept-email')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -1105,9 +1146,19 @@
 
                                 <div class="mb-3-btn">
                                     <button type="submit" class="btn btn-primary">Sign Up New Customer</button>
-                                    <button type="clear" class="btn btn-danger">Clear Form</button>
+                                    <button type="clear-button" class="btn btn-danger">Clear Form</button>
                                 </div>
                             </form>
+                            <script>
+                                const form = document.getElementById('add-cust-form');
+                                const clearButton = document.getElementById('clear-button');
+                        
+                                // Clear all form fields when "Clear" button is clicked
+                                clearButton.addEventListener('click', function() {
+                                    // Reset the form to its default state
+                                    form.reset();
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
