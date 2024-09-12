@@ -796,3 +796,12 @@ body {
     align-items: center;
     margin-top: 5px;
 }
+
+.add-cust-adv .card-body form .input{
+    height: 740px;
+}
+.text-danger-blue {
+    color: #0056b3;
+    font-size: 14px;
+    font-style: italic;
+}
