@@ -714,7 +714,7 @@ body {
 }
 .add-cust .card-body form .mb-3 label{
     display: flex;
-    justify-content: space-between;
+    gap: 5px;
 }
 .add-cust .card-body form .mb-3 label span {
     color: red;
@@ -723,8 +723,6 @@ body {
     line-height: 1;
 }
 
-.show_cust {
-}
 .show_cust .show_cust_row {
     display: flex;
     justify-content: space-between;
@@ -786,4 +784,15 @@ body {
 #DataTables_Table_0_wrapper{
     background-color: rgb(255, 255, 255);
     border: 1px solid #ced4da;
+}
+
+
+/* ---- 09/12/2024 ----*/
+.yes-no-option {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    height: 30px;
+    align-items: center;
+    margin-top: 5px;
 }
