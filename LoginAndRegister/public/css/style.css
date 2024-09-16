@@ -796,3 +796,223 @@ body {
     align-items: center;
     margin-top: 5px;
 }
+
+#report-table th{
+    text-align: center; 
+    vertical-align: middle;
+    background-color: #7A7A7A; 
+    color:white
+}
+
+/*  Updated CSS print part on 13/09/2024  */
+
+
+@media print {
+    /* Hide unnecessary elements */
+    body .sidebar, .card-header, .search-container, .dataTables_length, .dataTables_filter {
+        display: none !important;
+    }
+    .main-head{
+        display: none !important;
+    }
+
+    .container::before {
+        content: url('/img/Fast_One_Logo_txt.png'); /* Load the logo image */
+        display: inline-block;
+
+
+    }
+
+    
+    .container::after {
+        content: 'Account Report'; /* The text you want */
+        font-size: 1.2rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        font-weight: bold;
+    }
+
+
+
+    /* Make the main content and container visible */
+    .container, #report-table {
+        visibility: visible !important;
+        width: 100% !important;
+    }
+
+    /* Ensure the main content fills the full width */
+    .main-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important; /* Stretch across the entire width */
+        margin: 0;
+        padding: 0;
+        visibility: visible !important;
+    }
+    /* Show "Account Report" only on the first page */
+    .container:first-of-type::after {
+        content: 'Account Report';
+        font-size: 1.8rem;
+        position: absolute;
+        top: 2.3vh;
+        right: 10px;
+        padding: 10px;
+    }
+
+    /* Break after the first page to avoid repetition */
+    .container {
+        page-break-after: always;
+    }
+
+    /* Hide the "Account Report" text from subsequent pages */
+    .container + .container::after {
+        display: none;
+    }
+
+    /* Set table width and remove unnecessary borders */
+    #report-table {
+        visibility: visible !important;
+        width: 100% !important;
+    }
+
+
+    /* Ensure pagination and info take up full width */
+    .dataTables_paginate, .dataTables_info {
+        width: 100% !important; /* Stretch to 100% of the table width */
+        visibility: visible !important; /* Ensure they are visible */
+        display: block !important; /* Ensure block display for stretching */
+        text-align: center !important; /* Center align the pagination */
+    }
+
+    /* Remove page buttons (First, Previous, Next, Last) */
+    .dataTables_paginate .paginate_button {
+        display: none !important;
+    }
+    
+    #report-table th{
+        color: black;
+    }
+    /* Ensure table headers and cells have visible borders */
+    #report-table th, #report-table td {
+        border: 0.2px groove rgb(130, 130, 130) !important;
+        padding: 5px 5px !important; /* Ensure proper padding */
+        margin: 2px !important;
+        height: 30px !important; /* Adjust height here */
+        vertical-align: middle !important; /* Center content vertically */
+    }
+
+    /* Hide extra elements or any unnecessary text in print */
+    .dataTables_wrapper .top {
+        display: none !important;
+    }
+
+    /* Prevent table content from breaking into two lines */
+    #report-table td, #report-table th {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+/*  Updated CSS print part on 16/09/2024  */
+
+
+.search-table tr th{
+    text-align: center;
+}
+
+.search-table tr #radio-button{
+    height: 2.3vw;
+}
+
+.search-table tr #radio-button span{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+
+}
+.search-table tr #radio-button label{
+    margin-right: 2vw;
+}
+
+#all-cust-table thead tr th{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+
+#acc-status-his{
+    display: flex; 
+    gap: 5px;
+}
+
+#acc-status-his-table-left #acc-status-his-table-right{
+    flex: 1;
+}
+
+#stat-change-col-2{
+    background-color: #418CF0;
+}
+
+#stat-change-col-3{
+    background-color: #FCB441;
+}
+#stat-change-col-4{
+    background-color: #E0400A;
+}
+#stat-change-col-5{
+    background-color: #BFBFBF;
+}
+#stat-change-col-6{
+    background-color: #1A3B69;
+}
+#stat-change-col-7{
+    background-color: #FFE382;
+}
+#stat-change-col-8{
+    background-color: #129CDD;
+}
+
+#acc-sum-report{
+    display: flex; 
+    gap: 5px;
+}
+
+#acc-sum-report-graph, #acc-sum-report-table{
+    flex: 1;
+}
+
+
+#title-accounts-by-fee{
+    text-align: center;
+}
+
+#acc-sum-report-acc-by-fee{
+    display: flex;
+    gap: 5px;
+}
+
+#acc-sum-report-acc-by-fee-kh{
+    margin-top: 2vh;
+    flex: 1;
+    border: 1px dashed black;
+    color: red;
+}
+
+#acc-sum-report-acc-by-fee-en {
+    display: flex;
+    justify-content: space-between; /* Spread the charts evenly */
+    flex-wrap: wrap; /* Ensure they wrap in smaller screens */
+
+}
+
+.acc-sum-report-graph-en { /* Use class instead of ID */
+    flex: 0 1; /* Adjust width to allow for responsive behavior */
+}
+
+
+
