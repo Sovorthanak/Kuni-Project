@@ -44,6 +44,9 @@ Route::group(['middleware' => ['role:admin|staff']], function(){
 // Go to Report Section
     Route::get('/reports/acc-report', [ReportController::class, 'index']);
     Route::get('/reports/acc-status-his', [ReportController::class, 'accStatusHis']);
+    Route::get('/reports/acc-sum-report', [ReportController::class, 'accSumRepoprt']);
+
+
 
 
 
