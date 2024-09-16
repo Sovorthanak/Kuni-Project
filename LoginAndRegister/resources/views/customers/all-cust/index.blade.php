@@ -52,21 +52,21 @@
                             <form action="{{ url('customers/all-customers') }}" method="GET" id="customerSearchForm">
                                 <table class="search-table">
                                     <tr>
-                                        <th colspan="6" style="text-align: center; height: 4vh">Search Customers</th>
+                                        <th colspan="6">Search Customers</th>
                                     </tr>
                                     <tr>
-                                        <td style="padding-left: 10px; padding-top: 1vw"><label for="keyword">Keyword</label></td>
-                                        <td style="padding-top: 1vw"><label for="customerType">Customer Type</label></td>
-                                        <td style="padding-top: 1vw"><label for="industryType">Industry Type</label></td>
-                                        <td style="padding-top: 1vw"><label for="currency">Currency</label></td>
-                                        <td style="padding-top: 1vw"><label for="accountStatus">Account Status</label></td>
+                                        <td ><label for="keyword">Keyword</label></td>
+                                        <td ><label for="customerType">Customer Type</label></td>
+                                        <td ><label for="industryType">Industry Type</label></td>
+                                        <td ><label for="currency">Currency</label></td>
+                                        <td ><label for="accountStatus">Account Status</label></td>
                                     </tr>
                                     <tr>  
                                         <td>
                                             <input type="text" class="form-control" id="keyword" name="keyword" value="{{ request('keyword') }}">
                                         </td>
                                         <td>
-                                            <select class="form-control" id="type" name="type" style="width: 100%">
+                                            <select class="form-control" id="type" name="type">
                                                 <option value="">======= ALL =======</option>
                                                 <option value="Firm" {{ request('type') == 'Firm' ? 'selected' : '' }}>Firm</option>
                                                 <option value="Individual" {{ request('type') == 'Individual' ? 'selected' : '' }}>Individual</option>
@@ -80,7 +80,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select class="form-control" id="currency" name="currency" style="width: 100%">
+                                            <select class="form-control" id="currency" name="currency">
                                                 <option value="">====== ALL ======</option>
                                                 <option value="KHR" {{ request('currency') == 'KHR' ? 'selected' : '' }}>[KHR] Khmer Riel</option>
                                                 <option value="USD" {{ request('currency') == 'USD' ? 'selected' : '' }}>[USD] U.S. Dollar</option>
@@ -100,26 +100,26 @@
                                         </td>
                                         <td colspan="2">
                                             <button type="submit" class="btn btn-primary">Search</button>
-                                            <button type="button" class="btn btn-secondary" id="resetButton">Reset</button>
+                                            <button type="button" class="btn btn-secondary" id="resetButton" >Reset</button>
                                         </td>
                                     </tr>                                    
 
                                     <tr>
-                                        <td colspan="8" style="height: 2.3vw; ">
-                                            <span style="display: flex; align-items: center; justify-content: center;">
-                                                <label style="margin-right: 2vw;">
+                                        <td colspan="8" id= "radio-button">
+                                            <span>
+                                                <label>
                                                     <input type="radio" name="searchType" value="id" tabindex="6" {{ request('searchType') == 'id' ? 'checked' : '' }}> Customer ID
                                                 </label>
-                                                <label style="margin-right: 2vw;">
+                                                <label>
                                                     <input type="radio" name="searchType" value="customername" tabindex="6" {{ request('searchType') == 'customername' || !request('searchType') ? 'checked' : '' }}> Customer Name
                                                 </label>
-                                                <label style="margin-right: 2vw;">
+                                                <label>
                                                     <input type="radio" name="searchType" value="accountid" tabindex="6" {{ request('searchType') == 'accountid' ? 'checked' : '' }}> Account ID
                                                 </label>
-                                                <label style="margin-right: 2vw;">
+                                                <label>
                                                     <input type="radio" name="searchType" value="accountname" tabindex="6" {{ request('searchType') == 'accountname' ? 'checked' : '' }}> Account Name
                                                 </label>
-                                                <label style="margin-right: 2vw;">
+                                                <label>
                                                     <input type="radio" name="searchType" value="agent" tabindex="6" {{ request('searchType') == 'agent' ? 'checked' : '' }}> Agent
                                                 </label>
                                             </span>    
@@ -165,17 +165,17 @@
                         </form> --}}
 
                         
-                        <table class="table table-bordered table-striped">
-                            <thead style="background-color: #7A7A7A; color:white">
+                        <table class="table table-bordered table-striped" id="all-cust-table">
+                            <thead >
                                 <tr>
-                                    <th style="text-align: center; vertical-align: middle;">Customer ID</th>
-                                    <th style="text-align: center; vertical-align: middle;">Name (Organization)</th>
-                                    <th style="text-align: center; vertical-align: middle;">Type</th>
-                                    <th style="text-align: center; vertical-align: middle;">Account ID</th>
-                                    <th style="text-align: center; vertical-align: middle;">Account Name </th>
-                                    <th style="text-align: center; vertical-align: middle;">Status</th>
-                                    <th style="text-align: center; vertical-align: middle;">Tarrif</th>
-                                    <th style="text-align: center; vertical-align: middle;">Agent</th>
+                                    <th>Customer ID</th>
+                                    <th>Name (Organization)</th>
+                                    <th>Type</th>
+                                    <th>Account ID</th>
+                                    <th>Account Name </th>
+                                    <th>Status</th>
+                                    <th>Tarrif</th>
+                                    <th>Agent</th>
                                 </tr>
                             </thead>
 
