@@ -17,4 +17,9 @@ class ReportController extends Controller
 
         return view('reports.acc-status-his.index');
     }
+
+    public function accSumRepoprt(){
+
+        return view('reports.acc-sum-report.index');
+    }
 }
