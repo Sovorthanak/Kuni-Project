@@ -51,7 +51,7 @@
                             <div class="dd_items">
                               <li><a href="/reports/acc-report">Account Report</a></li>
                               <li><a href="/reports/acc-status-his">Account Status History</a></li>
-                              <li><a>Account Summary Report</a></li>
+                              <li><a href="/reports/acc-sum-report">Account Summary Report</a></li>
                               <li><a>Account Recievable Aging Report</a></li>
                               <li><a>Change Plan History</a></li>
                               <li><a>Customer Balance Report</a></li>
